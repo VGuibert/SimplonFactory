@@ -20,19 +20,15 @@ class Order {
     }
 
     removerProduct(productId : number){
-        this.productsList = this.productsList.filter((products) => products.productId !== productId);
+        this.productsList = this.productsList.filter((product) => product.productId !== productId);
     }
 
     calculateWeight(): number{
-        let totalWeight = 0;
-        this.productsList.filter((orders) => totalWeight+=orders.weight);
-        return totalWeight;
+        return this.productsList.reduce((totalWeight,product) => totalWeight + product.weight, 0);
     }
 
     calculateTotal(): number{
-        let totalOrder = 0;
-        this.productsList.filter((orders) => totalOrder+=orders.price);
-        return totalOrder;
+        return this.productsList.reduce((totalOrder,product) => totalOrder + product.price, 0);
     }   
 
     displayOrder(): string{
