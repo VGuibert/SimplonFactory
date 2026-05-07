@@ -23,19 +23,19 @@ class Order {
         this.productsList = this.productsList.filter((products) => products.productId !== productId);
     }
 
-    calculateWeight(){
+    calculateWeight(): number{
         let totalWeight = 0;
         this.productsList.filter((orders) => totalWeight+=orders.weight);
         return totalWeight;
     }
 
-    calculateTotal(){
+    calculateTotal(): number{
         let totalOrder = 0;
         this.productsList.filter((orders) => totalOrder+=orders.price);
         return totalOrder;
     }   
 
-    displayOrder(){
+    displayOrder(): string{
         return `Nom client : ${this.customer.name} , Email client : ${this.customer.email} , Commande : ${this.productsList.toString()}, Total de la commande : ${this.calculateTotal()}`
     }
 
