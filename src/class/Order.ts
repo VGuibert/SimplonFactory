@@ -36,7 +36,7 @@ class Order {
     }   
 
     displayOrder(): string{
-        return `Nom client : ${this.customer.name} , Email client : ${this.customer.email} , Commande : ${this.productsList.toString()}, Total de la commande : ${this.calculateTotal()}`
+        return `Nom client : ${this.customer.name} , Email client : ${this.customer.email} , Commande : ${this.productsList.toString()}, Total de la commande : ${this.calculateTotal()}, Date : ${this.orderDate}`
     }
 
 }
