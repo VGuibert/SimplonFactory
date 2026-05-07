@@ -1,0 +1,19 @@
+import type { ShoeSize } from "../enums/ShoeSizeEnum.js";
+import Product from "./Product.js";
+
+class Shoes extends Product {
+
+    size : ShoeSize;
+
+    constructor(productId : number,name: string, weight: number , price : number, size : ShoeSize){
+        super(productId, name,weight,price);
+        this.size = size;
+ }
+
+  displayDetails() : string {
+        return `Product ID : ${this.productId}, Name : ${this.name}, Weight : ${this.weight}, Price : ${this.price}, Size : ${this.size}`
+    } 
+
+}
+
+export default Shoes;
